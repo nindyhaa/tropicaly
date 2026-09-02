@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f8b5f" />
+  <meta name="description" content="Tropical Fresh - minuman buah tropis segar." />
+  <title>Tropical Fresh | Fresh Taste, Tropical Vibes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Tropical Fresh">
+      <span class="brand-mark">🌴</span>
+      <span><strong>Tropical</strong> Fresh</span>
+    </a>
+    <nav class="desktop-nav">
+      <a href="#home">Home</a><a href="#menu">Menu</a><a href="#promo">Promo</a>
+    </nav>
+    <button class="cart-button" id="cartBtn" aria-label="Buka keranjang">
+      🛒 <span>Keranjang</span><b id="cartCount">0</b>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <span class="eyebrow">🍹 FRESH • FRUITY • TROPICAL</span>
+        <h1>Segarkan harimu dengan <em>rasa tropis.</em></h1>
+        <p>Minuman buah segar dengan rasa ceria. Pilih favoritmu, atur gula dan topping, lalu pesan dalam beberapa klik.</p>
+        <div class="hero-actions"><a class="primary-btn" href="#menu">Lihat Menu <span>→</span></a><button class="text-btn" id="bestSellerBtn">⭐ Best Seller</button></div>
+        <div class="mini-stats"><div><strong>100%</strong><span>Fresh Fruit</span></div><div><strong>5</strong><span>Pilihan gula</span></div><div><strong>4.9/5</strong><span>Favorit</span></div></div>
+      </div>
+      <div class="hero-visual">
+        <div class="sun"></div><div class="leaf leaf-a">🌿</div><div class="leaf leaf-b">🌿</div>
+        <img src="https://images.unsplash.com/photo-1774428755046-f1a9b662ecb8?auto=format&fit=crop&fm=jpg&q=80&w=1200" alt="Mango smoothie segar" />
+        <div class="floating-card"><span>⭐</span><div><b>Best Seller</b><small>Mango Paradise</small></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="menu">
+      <div class="section-head"><div><span class="eyebrow">MENU KAMI</span><h2>Pick your tropical mood 🌺</h2></div><div class="search-wrap">🔎 <input id="search" placeholder="Cari minuman..." /></div></div>
+      <div class="categories" id="categories">
+        <button class="cat active" data-cat="all">Semua</button><button class="cat" data-cat="smoothie">🥭 Smoothie</button><button class="cat" data-cat="juice">🍍 Juice</button><button class="cat" data-cat="coconut">🥥 Coconut</button><button class="cat" data-cat="fresh">🍓 Fresh Fruit</button>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="promo" id="promo">
+      <div><span class="eyebrow">WEEKEND TROPICAL DEAL</span><h2>Buy 2, get 1 fresh!</h2><p>Pesan minimal 2 minuman ukuran Large dan dapatkan 1 minuman Regular gratis.</p><button class="light-btn" id="promoBtn">Ambil Promo</button></div>
+      <div class="promo-fruits">🥭 🍍 🥥 🍓</div>
+    </section>
+
+    <section class="why section">
+      <div class="section-head"><div><span class="eyebrow">KENAPA TROPICAL FRESH?</span><h2>Dibuat untuk bikin mood naik.</h2></div></div>
+      <div class="benefits"><article>🍊<h3>Buah pilihan</h3><p>Rasa buah yang segar dan ceria di setiap gelas.</p></article><article>🧊<h3>Fresh dibuat</h3><p>Pesanan dibuat setelah kamu checkout.</p></article><article>💚<h3>Bisa custom</h3><p>Atur ukuran, gula, dan topping sesuai selera.</p></article></div>
+    </section>
+  </main>
+
+  <footer><div class="brand"><span class="brand-mark">🌴</span><span><strong>Tropical</strong> Fresh</span></div><p>Fresh Taste, Tropical Vibes! © 2026</p></footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="drawer" aria-label="Keranjang belanja">
+    <div class="drawer-head"><h2>Keranjang 🛒</h2><button id="closeCart">✕</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-bottom"><div class="total-row"><span>Total</span><strong id="cartTotal">Rp0</strong></div><button class="primary-btn full" id="checkoutBtn">Checkout →</button></div>
+  </aside>
+
+  <div class="modal" id="productModal"><div class="modal-card"><button class="modal-close" id="modalClose">✕</button><img id="modalImg" alt="" /><div class="modal-body"><span class="eyebrow" id="modalCategory"></span><h2 id="modalName"></h2><p id="modalDesc"></p><strong class="modal-price" id="modalPrice"></strong><div class="option-title">Ukuran</div><div class="size-options"><button class="size active" data-size="Regular">Regular</button><button class="size" data-size="Large">Large +Rp3.000</button></div><div class="option-title">Gula</div><div class="sugar-options"><button class="sugar active" data-sugar="50%">50%</button><button class="sugar" data-sugar="25%">25%</button><button class="sugar" data-sugar="0%">0%</button><button class="sugar" data-sugar="75%">75%</button><button class="sugar" data-sugar="100%">100%</button></div><div class="option-title">Topping</div><select id="topping"><option value="0">Tanpa topping</option><option value="3000">Nata de coco +Rp3.000</option><option value="3000">Jelly +Rp3.000</option><option value="4000">Extra fruit +Rp4.000</option></select><button class="primary-btn full" id="addToCart">+ Tambah ke keranjang</button></div></div></div>
+
+  <div class="modal" id="checkoutModal"><div class="checkout-card"><button class="modal-close" id="checkoutClose">✕</button><span class="eyebrow">CHECKOUT</span><h2>Siap menyegarkan harimu? 🥭</h2><label>Nama<input id="customerName" placeholder="Nama kamu" /></label><label>Alamat / lokasi<input id="customerAddress" placeholder="Rumah, sekolah, kantor..." /></label><label>Pembayaran<select id="payment"><option>QRIS</option><option>Cash</option><option>Transfer Bank</option><option>E-Wallet</option></select></label><div class="checkout-total"><span>Total pesanan</span><strong id="checkoutTotal">Rp0</strong></div><button class="primary-btn full" id="placeOrder">Pesan Sekarang 🍹</button></div></div>
+
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
